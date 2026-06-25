@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creamy Delight By Ayesha - About</title>
+<style>
+                  header {
+            background-color: var(--warm-pink);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--soft-pink);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .logo-container img {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        header h1 { 
+            font-size: 2.6em; 
+            margin-bottom: 5px; 
+            color: #FF6B81;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        header p { 
+            font-size: 1.15em; 
+            opacity: 0.95; 
+            font-style: italic; 
+            color: #FF6B81;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px var(--shadow);
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 4px solid var(--peach);
+        }
+        .gallery-item:hover { 
+            transform: scale(1.03); 
+            border-color: var(--soft-pink);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 154, 162, 0.95);
+            color: white;
+            padding: 18px;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(74, 44, 42, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 20px;
+            border: 5px solid var(--peach);
+        }
+        .lightbox-caption {
+            color: white;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: white;
+            font-size: 2.5em;
+            cursor: pointer;
+        }
+
+</style>
+</head>
+<body bgcolor="#FFF5F0">
+
+<center>
+
+<!-- LOGO -->
+ <header>
+        <div class="logo-container">
+            <img src="logo3.png" alt="Creamy Delight By Ayesha Logo">
+            <div>
+                <h1>Creamy Delight By Ayesha</h1>
+                <p>Handcrafted with Love, Baked to Perfection</p>
+            </div>
+        </div>
+    </header>
+
+<br>
+
+<!-- NAVIGATION - Same Tab -->
+<table width="60%" cellpadding="15" cellspacing="0" bgcolor="#FFB7B2" style="border-radius: 30px;">
+    <tr>
+        <td align="center">
+            <font size="4">
+                <a href="index.html" style="text-decoration: none;"><font color="white" face="Georgia"><b>Home</b></font></a> 
+                <font color="white">&nbsp;|&nbsp;</font>
+                <a href="about.html" style="text-decoration: none;"><font color="white" face="Georgia"><b>About</b></font></a> 
+                <font color="white">&nbsp;|&nbsp;</font>
+                <a href="gallery.html" style="text-decoration: none;"><font color="white" face="Georgia"><b>Gallery</b></font></a> 
+                <font color="white">&nbsp;|&nbsp;</font>
+                <a href="contact.html" style="text-decoration: none;"><font color="white" face="Georgia"><b>Contact</b></font></a>
+            </font>
+        </td>
+    </tr>
+</table>
+
+<table width="85%" cellpadding="30" cellspacing="0" bgcolor="#FFDAC1" style="margin-top: 40px;  margin-bottom: 70px;" >
+    <tr>
+        <td align="center">
+            <font face="Georgia" size="6" color="#8B5E3C"><b>🖼️ Our Sweet Galler</b></font>
+            <br><br>
+            <font face="Georgia" size="4" color="#5D4037">
+                Click on any image to see it in full size. Every creation is made with love and attention to detail.
+            </font>
+            <br><br>
+        </td>
+    </tr>
+</table>
+<section id="gallery" class="section">
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="brownie.png" alt="EID DEAL 01 - 4 chocolate loaded fudge brownies in a decorative box">
+                <div class="gallery-overlay">
+                    <h3>🎁 EID DEAL 01</h3>
+                    <p>4 chocolate loaded fudge Brownies - PKR 999</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="🩷1️⃣3️⃣🌺.png" alt="EID DEAL 02 - 6inch triple chocolate Brownie slab with floral decorations">
+                <div class="gallery-overlay">
+                    <h3>🎁 EID DEAL 02</h3>
+                    <p>6inch triple chocolate Brownie slab - PKR 1,199</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="cupcake.png" alt="EID DEAL 03 - 6 customized cupcakes in a beautiful box">
+                <div class="gallery-overlay">
+                    <h3>🎁 EID DEAL 03</h3>
+                    <p>6 customized cupcakes - PKR 1,250</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="three tier.png" alt="Elegant three-tier chocolate wedding cake">
+                <div class="gallery-overlay">
+                    <h3>🎂 Wedding Cake</h3>
+                    <p>Three-tier chocolate delight</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="frosting.png" alt="Colorful vanilla cupcakes with frosting">
+                <div class="gallery-overlay">
+                    <h3>🧁 Rainbow Cupcakes</h3>
+                    <p>Vanilla cupcakes with buttercream</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400" alt="Assorted chocolate chip and sugar cookies">
+                <div class="gallery-overlay">
+                    <h3>🍪 Cookie Platter</h3>
+                    <p>Freshly baked assorted cookies</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="Decadent Triple Chocolate Cake Recipe_ Rich, Moist, and Irresistible! _ Food & Recipes.png" alt="Rich chocolate fudge cake with ganache" height="10%">
+                <div class="gallery-overlay">
+                    <h3>🍫 Fudge Cake</h3>
+                    <p>Rich chocolate ganache delight</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400" alt="Beautifully decorated birthday cake">
+                <div class="gallery-overlay">
+                    <h3>🎉 Birthday Cake</h3>
+                    <p>Custom themed birthday special</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="Strawberry Cream Cake with Fresh Strawberries.png" alt="Fresh strawberry shortcake with whipped cream">
+                <div class="gallery-overlay">
+                    <h3>🍓 Strawberry Shortcake</h3>
+                    <p>Fresh berries and whipped cream</p>
+                </div>
+            </div>
+             <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="bento.png" alt="A round yellow birthday cake decorated with white daisy flowers and orange centers, with Happy Birthday written in white icing">
+                <div class="gallery-overlay">
+<h3>🌼 Sunshine Daisy Birthday Cake 🌼</h3>
+<p>🎂 Brighten your celebration with our cheerful yellow cake, adorned with delicate daisy flowers and personalized icing! ✨</p>
+                </div>
+            </div>
+             <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="Homemade Chocolate Cake Pops .png.jpg" alt="Chocolate cake pops coated in glossy chocolate with colorful rainbow sprinkles, one bitten to show moist chocolate interior">
+                <div class="gallery-overlay">
+                <h3>🍫 Rainbow Sprinkle Cake Pops</h3>
+<p>🎉 Bite-sized chocolate bliss on a stick, coated in sprinkles!</p>
+                </div>
+            </div>
+             <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="Dubai chocolate🍫❤️ https___buymeacoffee_com_lindoucha_dubai-chocolate.png" alt="Kunafa chocolate bar with crispy golden kunafa pastry layered with rich melted chocolate">
+                <div class="gallery-overlay">
+                     <h3>🍫 Kunafa Chocolate Bar</h3>
+        <p>🌟 Crispy golden kunafa wrapped around rich chocolate — a Middle Eastern twist!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+
+    <table width="100%" cellpadding="20" cellspacing="0" bgcolor="#E0BBE4">
+    <tr>
+        <td align="center">
+            <font face="Georgia" size="4" color="white">
+                🌸 Looking for dessert inspiration? Explore beautiful cake ideas on 
+                <a href="https://www.pinterest.com" style="text-decoration: none;">
+                    <font face="Georgia" color="#FFF4BD"><b>Pinterest</b></font>
+                </a>! 🌸
+            </font>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+    <table width="100%" cellpadding="20" cellspacing="0" bgcolor="#E2A8B4">
+    <tr>
+        <td align="center">
+            <font face="Georgia" color="white" size="3">
+                🧁  2026 Creamy Delight By Ayesha. All Rights Reserved. 🧁
+                <br><br>
+                <a href="https://www.google.com" style="text-decoration: none;">
+                    <font color="#FFF4BD">Search on Google</font>
+                </a> 
+                &nbsp;|&nbsp; 
+                <a href="https://www.instagram.com/creamy_delight01" style="text-decoration: none;">
+                    <font color="#FFF4BD">Follow on Instagram</font>
+                </a>
+            </font>
+        </td>
+    </tr>
+</table>
+
+</center>
+
+</body>
+</html>
